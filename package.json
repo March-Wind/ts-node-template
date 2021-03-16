@@ -16,7 +16,7 @@
     "@types/node": "^14.14.35",
     "@types/shelljs": "^0.8.8",
     "argv": "0.0.2",
-    "husky": "^5.1.3",
+    "husky": "^4.3.8",
     "lint-staged": "^10.5.4"
   },
   "scripts": {
@@ -25,14 +25,15 @@
   },
   "author": "",
   "license": "MIT",
-  "lint-staged":{
-    "*.{png,jpg,jpeg,webp}":[
+  "lint-staged": {
+    "*.{png,jpg,jpeg,webp}": [
+      "echo \"Error: no test specified\" && exit 1",
       "npm run trans"
     ]
   },
-  "husky":{
-    "hooks":{
-      "pre-commit": "lint-staged"
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
     }
   }
 }

@@ -2,6 +2,7 @@ import glob from 'glob';
 import shell from 'shelljs';
 import argv from 'argv';
 import formatURL from './format';
+console.log(1111,process.argv.splice(2));
 argv.option({
     name: 'dir',
     short: 'd',
