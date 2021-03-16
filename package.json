@@ -1,0 +1,38 @@
+{
+  "name": "squoosh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@squoosh/cli": "^0.6.3",
+    "glob": "^7.1.6",
+    "shelljs": "^0.8.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {
+    "@types/argv": "0.0.4",
+    "@types/glob": "^7.1.3",
+    "@types/node": "^14.14.35",
+    "@types/shelljs": "^0.8.8",
+    "argv": "0.0.2",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "trans": "ts-node --project ./tsconfig.json ./src/trans.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "lint-staged":{
+    "*.{png,jpg,jpeg,webp}":[
+      "npm run trans"
+    ]
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit": "lint-staged"
+    }
+  }
+}
