@@ -1,11 +1,12 @@
 {
-  "name": "squoosh",
-  "version": "1.0.0",
+  "name": "ts-node-template",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "image-linter": "src/trans.js"
+  },
   "dependencies": {
-    "@squoosh/cli": "^0.6.3",
-    "glob": "^7.1.6",
     "shelljs": "^0.8.4",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
@@ -14,26 +15,12 @@
     "@types/argv": "0.0.4",
     "@types/glob": "^7.1.3",
     "@types/node": "^14.14.35",
-    "@types/shelljs": "^0.8.8",
-    "argv": "0.0.2",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.4"
+    "@types/shelljs": "^0.8.8"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "trans": "ts-node --project ./tsconfig.json ./src/trans.ts"
+    "ts:run": "ts-node --project ./tsconfig.json ./src/index.ts",
+    "ts:debugger":"TS_NODE_PROJECT=./tsconfig.json node --inspect-brk  -r ts-node/register  ./src/index.ts"
   },
   "author": "",
-  "license": "MIT",
-  "lint-staged": {
-    "*.{png,jpg,jpeg,webp}": [
-      "echo \"Error: no test specified\" && exit 1",
-      "npm run trans"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "precommit": "lint-staged"
-    }
-  }
+  "license": "MIT"
 }
